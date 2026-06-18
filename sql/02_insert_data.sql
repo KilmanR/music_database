@@ -5,7 +5,8 @@ INSERT INTO public.genres ("name") VALUES
 ('Grunge'),
 ('Dance Pop'),
 ('Electronic'),
-('Dance');
+('Dance'),
+('Synthpop');
 
 -- Исполнители
 INSERT INTO public.artists ("name") VALUES
@@ -13,7 +14,8 @@ INSERT INTO public.artists ("name") VALUES
 ('Elton John, Dua Lipa'),
 ('Harper Quinn, Emily Esthela, Namté'),
 ('PHURS, Ivan Crooks, Rachel Morgan Perry'),
-('Edo Denova, Sz_Becca');
+('Edo Denova, Sz_Becca'),
+('Donna Lewis, Digital Farm Animals');
 
 -- Альбомы
 INSERT INTO public.albums (title,"year") VALUES
@@ -21,7 +23,8 @@ INSERT INTO public.albums (title,"year") VALUES
 ('Cold Heart (PNAU Remix)',2021),
 ('Stolen Dance',2025),
 ('Dancing In The Moonlight - Single',2025),
-('Like A Prayer',2026);
+('Like A Prayer',2026),
+('ILYAF (I love you always forever)', 2023);
 
 -- Связь исполнитель-жанр
 INSERT INTO public.artist_genre (artist_id,genre_id) VALUES
@@ -29,7 +32,8 @@ INSERT INTO public.artist_genre (artist_id,genre_id) VALUES
 (2,2),
 (3,3),
 (4,3),
-(5,4);
+(5,4),
+(6,5);
 
 -- Связь исполнитель-альбом
 INSERT INTO public.artist_album (artist_id,album_id) VALUES
@@ -37,7 +41,8 @@ INSERT INTO public.artist_album (artist_id,album_id) VALUES
 (2,2),
 (3,3),
 (4,4),
-(5,5);
+(5,5),
+(6,6);
 
 -- Треки
 INSERT INTO public.tracks (title,duration_ms,album_id,file_path) VALUES
@@ -45,4 +50,5 @@ INSERT INTO public.tracks (title,duration_ms,album_id,file_path) VALUES
 ('Cold Heart (PNAU Remix)',203000,2,'media/audio/elton_john_dua_lipa_cold_heart_pnau_remix.mp3'),
 ('Stolen Dance',157000,3,'media/audio/harper_quinn_emily_esthela_namte_stolen_dance.mp3'),
 ('Dancing In The Moonlight',146000,4,'media/audio/phurs_ivan_crooks_rachel_morgan_perry_dancing_in_the_moonlight.mp3'),
-('Like A Prayer',148000,5,'media/audio/edo_denova_sz_becca_like_a_prayer.mp3');
+('Like A Prayer',148000,5,'media/audio/edo_denova_sz_becca_like_a_prayer.mp3'),
+('ILYAF (I love you always forever)', 166000, 6, 'media/audio/donna_lewis_digital_farm_animals_ilyaf.mp3');
