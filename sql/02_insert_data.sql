@@ -52,3 +52,44 @@ INSERT INTO public.tracks (title,duration_ms,album_id,file_path) VALUES
 ('Dancing In The Moonlight',146000,4,'media/audio/phurs_ivan_crooks_rachel_morgan_perry_dancing_in_the_moonlight.mp3'),
 ('Like A Prayer',148000,5,'media/audio/edo_denova_sz_becca_like_a_prayer.mp3'),
 ('ILYAF (I love you always forever)', 166000, 6, 'media/audio/donna_lewis_digital_farm_animals_ilyaf.mp3');
+
+-- ========================================
+-- Добавление сборников (collection)
+-- ========================================
+
+-- 1. Создаем 5 сборников
+INSERT INTO collection (collection_id, title, "year") VALUES
+(1, 'Best of 90s', 2023),
+(2, 'Dance Hits 2020s', 2024),
+(3, 'Love Songs', 2023),
+(4, 'Electronic Vibes', 2024),
+(5, 'Best of 2019', 2019);
+
+-- 2. Связи сборников с треками
+
+-- Сборник 1: Best of 90s (трек 1 - Nirvana)
+INSERT INTO collection_track (collection_id, track_id) VALUES
+(1, 1);
+
+-- Сборник 2: Dance Hits 2020s (треки 2, 3, 4, 6)
+INSERT INTO collection_track (collection_id, track_id) VALUES
+(2, 2),  -- Cold Heart
+(2, 3),  -- Stolen Dance
+(2, 4),  -- Dancing In The Moonlight
+(2, 6);  -- ILYAF
+
+-- Сборник 3: Love Songs (треки 5, 6)
+INSERT INTO collection_track (collection_id, track_id) VALUES
+(3, 5),  -- Like A Prayer
+(3, 6);  -- ILYAF
+
+-- Сборник 4: Electronic Vibes (треки 2, 3, 6)
+INSERT INTO collection_track (collection_id, track_id) VALUES
+(4, 2),  -- Cold Heart
+(4, 3),  -- Stolen Dance
+(4, 6);  -- ILYAF
+
+-- Сборник 5: Best of 2019 (треки 1, 2)
+INSERT INTO collection_track (collection_id, track_id) VALUES
+(5, 1),  -- Smells Like Teen Spirit
+(5, 2);  -- Cold Heart
